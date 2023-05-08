@@ -49,16 +49,22 @@
                 </ul>
             </div>
             <footer>
+                <py-config type="toml">
+                    [[fetch]]
+                    files = ["/chatgpt.py"]
+                    [[fetch]]
+                    files = ["/example.py"]
+                  </py-config>
+                  <py-script>
+                    from chatgpt import chatgpt
+                  </py-script>
                 <form>
                     <input type="text" placeholder="Digite sua mensagem">
-                    <button type="submit">Enviar</button>
+                    <button py-click="chatgpt()" type="submit">Enviar</button>
                 </form>
             </footer>
         </div>  
-      <py-config type="toml">
-        [[fetch]]
-        files = ["/example.py"]
-      </py-config>
+      
       <p>Your lucky number is <label id="lucky" for="lucky"></label></p>
       <div id="display-write"></div>
       <py-script>

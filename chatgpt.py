@@ -29,7 +29,7 @@ def chatgpt(contexto, pergunta):
 
 # o contexto podem ser dados que o usuário fornece previamente através de um formulário
 contexto = "Eu tenho um gato siamês de 2 anos chamado Tom. Ele é muito brincalhão e adora perseguir bolas de papel."
-pergunta = "Como cuidar de gatos filhotes?"
+pergunta = "Como cuidar de um gato?"
 
 resposta = chatgpt(contexto, pergunta)
 print(resposta)
