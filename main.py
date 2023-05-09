@@ -33,7 +33,7 @@ def chatgpt(contexto, pergunta):
     completions = openai.Completion.create(
         engine="davinci", 
         prompt=prompt, 
-        max_tokens=200, 
+        max_tokens=20000, 
         n=1, 
         stop=None, 
         temperature=0.5,
