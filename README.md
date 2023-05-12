@@ -15,4 +15,16 @@
     pip install openai
 `
 
-### 3) Criar arquivo .env e inserir token de acesso a API conforme .env.example
+### 3) Instalar biblioteca Tkinter
+
+`
+    pip install tkinter
+`
+
+### 4) Instalar biblioteca Pillow
+
+`
+    pip install pillow
+`
+
+### 5) Criar arquivo .env e inserir token de acesso a API conforme .env.example
