@@ -1,6 +1,7 @@
 import openai, dotenv, os
 import tkinter as tk
 from tkinter import scrolledtext, font, ttk
+from PIL import Image, ImageTk
 
 dotenv.load_dotenv()
 # Initialize the API key
@@ -19,7 +20,7 @@ mensagens = "Olá! Digite sua mensagem relacionada a gatos abaixo e pressione EN
 
 def enviar_mensagem():
     global mensagens
-    keywords = ["gato", "gata", "gatas", "gatos", "felino", "felinos", "miau", "miado", "dele", "dela", "deles", "delas", "ele", "ela", "eles", "elas"]
+    keywords = ["gato", "gata", "gatas", "gatos", "felino", "felinos", "miau", "miado", "dele", "dela", "deles", "delas", "ele", "ela", "eles", "elas", "olá", "oi"]
     question = entrada.get()
 
     if question == "":
@@ -39,7 +40,7 @@ def enviar_mensagem():
 # Interface
 janela = tk.Tk()
 janela.title("ChatGPT - Gatos")
-janela.geometry("600x550")
+janela.geometry("700x650")
 janela.configure(bg='#2d3142')
 fonte = tk.font.Font(family="Tahoma", size=10)
 
@@ -47,6 +48,20 @@ fonte = tk.font.Font(family="Tahoma", size=10)
 cor_fundo = "#2d3142"
 cor_borda = "#000000"
 cor_botao = "#f86624"
+
+# Label com o texto "PyCat"
+label = tk.Label(janela, text="PyCat")
+label.configure(font=("Tahoma", 20), fg="white", bg="#2d3142")
+label.pack(pady=10)
+
+# Imagem do gato
+img = Image.open("cat.png")
+img = img.resize((50, 50), Image.Resampling.LANCZOS)
+img = ImageTk.PhotoImage(img)
+
+# Cria o label com a imagem
+img_label = tk.Label(janela, image=img, padx=5, pady=5)
+img_label.pack(side=tk.TOP)
 
 # Área de texto
 area_texto = scrolledtext.ScrolledText(janela, width=75, height=25)
